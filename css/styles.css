@@ -12,8 +12,9 @@
 
   --title-m: 24px;
   --title-l: 40px;
-  --title-xl: 48px;
-  --title-xxl: 56px;
+  --title-xl: 32px;
+  --title-xxl: 48px;
+  --title-xxxl: 56px;
 
   --line-height-m: 28px;
   --line-height-l: 48px;
@@ -56,6 +57,7 @@ h3,
 a,
 button {
   font-family: var(--space-mono);
+  margin-block: 0;
 }
 
 .showing-menu::before {
@@ -289,7 +291,139 @@ button {
   }
 }
 
-.features {
+/* MAIN - HOME */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  text-align: center;
+}
+
+.section-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.arrow-image {
+  margin-bottom: 56px;
+}
+
+.title-xxl {
+  font-size: var(--title-xxl);
+}
+
+.title-xl {
+  font-size: var(--title-xl);
+  letter-spacing: -1.43px;
+  line-height: 32px;
+  margin-bottom: 32px;
+}
+
+.title-l {
+  font-size: var(--title-l);
+}
+
+.title-s {
+  font-size: var(--title-s);
+}
+
+.text {
+  font-size: var(--text-m);
+  line-height: var(--line-height-s);
+  margin-bottom: 32px;
+}
+
+.rounded-image {
+  position: relative;
+  z-index: -1;
+  border-radius: 50%;
+}
+
+.arrow-1 {
+  padding-inline: 32px;
+  background-image: url(../assets/patterns/left-downward-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 32px 150px;
+}
+
+.arrow-2 {
+  padding-inline: 32px;
+  background-image: url(../assets/patterns/right-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: -150px 0;
+}
+
+.arrow-3 {
+  padding-inline: 32px;
+  background-image: url(../assets/patterns/left-downward-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 150px 0;
+}
+
+.arrow-4 {
+  padding-inline: 32px;
+  background-image: url(../assets/patterns/left-upward-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 32px 150px;
+}
+
+.arrow-5 {
+  padding-inline: 32px;
+  background-image: url(../assets/patterns/right-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: -125px 0;
+}
+
+@media screen and (width>=768px) {
+  .circle-right::after,
+  .circle-left::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 445px;
+    height: 445px;
+    background-image: url(../assets/patterns/circle.svg);
+    background-repeat: no-repeat;
+    background-position: 350px 0;
+  }
+
+  .circle-left::after {
+    left: 0;
+    background-position: -350px 0;
+  }
+}
+
+.button {
+  width: 180px;
+  line-height: 25px;
+  padding-block: 14px;
+  background-color: var(--yellow);
+  border: none;
+  color: var(--snow);
+}
+
+.circle-with-number {
+  position: relative;
+}
+
+.number-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 68px;
+  bottom: -48px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: var(--yellow);
+  font-size: 24px;
+  font-family: var(--space-mono);
+  font-weight: 700;
+}
+
+/* .features {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -399,11 +533,7 @@ button {
   text-align: center;
 }
 
-.rounded-image {
-  position: relative;
-  z-index: -1;
-  border-radius: 50%;
-}
+
 
 .section-with-arrow {
   padding-inline: 32px;
@@ -682,7 +812,6 @@ button {
 @media screen and (width>=768px) {
   .cities {
     max-width: 1024px;
-    /* background-color: red; */
   }
   .new-york {
     top: 50px;
@@ -703,4 +832,5 @@ button {
     top: 70px;
     left: 850px;
   }
-}
+} 
+  */
