@@ -1,15 +1,20 @@
-// const menuIconElement = document.getElementById('menu-icon');
-// const menuElement = document.getElementById('menu');
+const menuIconElement = document.getElementById('menu-icon');
+const menuElement = document.getElementById('menu');
 
-// const toggleMenu = () => {
-//   menuElement.classList.toggle('menu-show');
-//   document.body.classList.toggle('showing-menu');
+const locationPage = window.location.pathname;
+const areInIndex = locationPage.includes('index');
 
-//   if (menuElement.classList.contains('menu-show')) {
-//     menuIconElement.src = './assets/icons/close.svg';
-//   } else {
-//     menuIconElement.src = './assets/icons/hamburger.svg';
-//   }
-// };
+const toggleMenu = () => {
+  menuElement.classList.toggle('menu-show');
+  document.body.classList.toggle('showing-menu');
 
-// menuIconElement.addEventListener('click', toggleMenu);
+  const imagePath = areInIndex ? './assets/icons/' : '../assets/icons/';
+
+  if (menuElement.classList.contains('menu-show')) {
+    menuIconElement.src = imagePath + 'close.svg';
+  } else {
+    menuIconElement.src = imagePath + 'hamburger.svg';
+  }
+};
+
+menuIconElement.addEventListener('click', toggleMenu);
